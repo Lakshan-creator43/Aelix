@@ -533,6 +533,67 @@ body::before,.overlay,.bg-overlay,.background-overlay{
     backdrop-filter: blur(6px) !important;
     -webkit-backdrop-filter: blur(6px) !important;
 }
+
+/* ── AELIX 2.0 AI & PDF FIDELITY ENHANCEMENTS ── */
+.key-btn{display:flex;align-items:center;gap:6px;}
+.key-status-dot{width:8px;height:8px;border-radius:50%;background:#94a3b8;display:inline-block;transition:all .2s;}
+.key-status-dot.active{background:#10b981;box-shadow:0 0 8px rgba(16,185,129,.7);}
+.key-status-dot.warn{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,.7);}
+
+.global-cmd-wrapper{width:100%;display:flex;flex-direction:column;gap:8px;padding:4px 0;}
+.global-input-box{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.92);border:1.5px solid var(--border);border-radius:14px;padding:4px 6px 4px 14px;box-shadow:0 4px 16px rgba(139,92,246,.08);transition:all .2s;}
+.global-input-box:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(139,92,246,.15);background:#fff;}
+.ai-magic-icon{font-size:1.15rem;color:var(--accent);animation:pulse 2s infinite;}
+#global-cmd-input{flex:1;border:none;outline:none;background:transparent;font-family:'Nunito',sans-serif;font-size:.9rem;color:var(--text);padding:8px 0;}
+#global-cmd-input::placeholder{color:var(--muted);font-weight:300;}
+.btn-global-weave{padding:10px 22px;background:linear-gradient(135deg,var(--accent) 0%,#7c3aed 100%);color:#fff;border:none;border-radius:11px;font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:700;box-shadow:0 4px 14px rgba(124,58,237,.3);transition:transform .15s,box-shadow .15s;white-space:nowrap;cursor:pointer;}
+.btn-global-weave:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(124,58,237,.45);}
+.btn-global-weave:disabled{opacity:.5;cursor:not-allowed;}
+.global-chips-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+.chips-label{font-size:.73rem;color:var(--muted);font-weight:700;margin-right:2px;}
+
+.ai-summary-card{background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border:1.5px solid rgba(139,92,246,.4);border-radius:18px;padding:22px;margin-bottom:24px;box-shadow:0 12px 36px rgba(124,58,237,.14);animation:slideDown .3s ease;}
+.summary-card-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-bottom:12px;border-bottom:1px solid rgba(139,92,246,.15);margin-bottom:14px;}
+.summary-title-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.summary-pill{background:linear-gradient(135deg,var(--accent) 0%,#7c3aed 100%);color:#fff;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.03em;}
+.summary-name{font-size:.95rem;font-weight:700;color:var(--text);}
+.summary-provider{font-size:.68rem;color:var(--muted);background:var(--accent-p);padding:2px 8px;border-radius:12px;border:1px solid var(--accent-l);}
+.summary-btns{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.btn-sum-act{padding:6px 12px;background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:.76rem;color:var(--text);transition:all .15s;cursor:pointer;}
+.btn-sum-act:hover{background:var(--accent-p);color:var(--accent);border-color:var(--accent-l);}
+.btn-sum-act.active{background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;font-weight:700;}
+.btn-sum-close{background:transparent;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:4px 8px;border-radius:6px;}
+.btn-sum-close:hover{color:#ef4444;background:rgba(239,68,68,.1);}
+.summary-card-body{font-size:.92rem;line-height:1.8;color:#1e1b4b;white-space:pre-wrap;max-height:450px;overflow-y:auto;padding-right:8px;}
+.summary-card-body::-webkit-scrollbar{width:5px;}
+.summary-card-body::-webkit-scrollbar-thumb{background:var(--accent-l);border-radius:4px;}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(30,27,75,.45);backdrop-filter:blur(6px);z-index:9999;display:flex;align-items:center;justify-content:center;animation:fadeIn .2s;}
+.modal-glass{background:rgba(255,255,255,.96);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.7);box-shadow:0 24px 64px rgba(76,29,149,.28);border-radius:24px;width:92%;max-width:500px;padding:28px;}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.modal-title{font-size:1.18rem;font-weight:700;color:#312e81;}
+.modal-close{background:transparent;border:none;font-size:1.2rem;color:#64748b;cursor:pointer;padding:4px;}
+.modal-close:hover{color:#ef4444;}
+.modal-desc{font-size:.85rem;color:#64748b;margin-bottom:18px;line-height:1.5;}
+.modal-field{margin-bottom:16px;}
+.modal-field label{display:block;font-size:.82rem;font-weight:700;color:#3730a3;margin-bottom:6px;}
+.input-with-btn{display:flex;gap:8px;}
+.input-with-btn input{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:monospace;font-size:.85rem;outline:none;}
+.input-with-btn input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(139,92,246,.15);}
+.btn-reveal{padding:0 12px;background:#f1f5f9;border:1px solid var(--border);border-radius:10px;cursor:pointer;}
+.field-hint{display:block;font-size:.74rem;color:#6b7280;margin-top:6px;}
+.field-hint a{color:var(--accent);text-decoration:none;font-weight:700;}
+.field-hint a:hover{text-decoration:underline;}
+.key-status-msg{font-size:.82rem;min-height:22px;margin-top:10px;}
+.key-status-msg.ok{color:#059669;font-weight:600;}
+.key-status-msg.err{color:#dc2626;}
+.modal-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:20px;}
+.btn-modal-test{padding:9px 16px;background:#f8fafc;border:1px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:600;color:#475569;cursor:pointer;}
+.btn-modal-test:hover{background:#f1f5f9;}
+.btn-modal-save{padding:9px 22px;background:linear-gradient(135deg,var(--accent) 0%,#7c3aed 100%);border:none;border-radius:10px;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700;color:#fff;cursor:pointer;box-shadow:0 4px 12px rgba(124,58,237,.3);}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.15)}}
 </style>
 
 </head>
@@ -553,7 +614,6 @@ body::before,.overlay,.bg-overlay,.background-overlay{
 <div id="landing">
   <div class="logo">Ae<span>lix</span></div>
   <div class="drop-zone" id="dz">
-    
     <div class="drop-label">Drop your PDF here</div>
     <button class="btn-pick" id="pick-btn">Choose file</button>
     <input type="file" id="file-input" accept=".pdf"/>
@@ -567,6 +627,7 @@ body::before,.overlay,.bg-overlay,.background-overlay{
   <header class="topbar">
     <div class="tlogo">Ae<span>lix</span></div>
     <div class="tfile" id="tfile">—</div>
+    <button class="btn-topbar key-btn" id="btn-ai-key" onclick="openKeyModal()">⚙️ AI Key <span class="key-status-dot" id="key-dot"></span></button>
     <button class="btn-topbar" onclick="resetApp()">↩ New</button>
     <button class="btn-dl" id="btn-dl" onclick="showDlMenu()">↓ Export</button>
   </header>
@@ -596,21 +657,50 @@ body::before,.overlay,.bg-overlay,.background-overlay{
 
     <!-- MAIN EDITOR -->
     <div class="editor">
-      <!-- top command chips -->
+      <!-- Aelix AI Command Center -->
       <div class="cmd-bar">
-        <span class="cmd-label">Aelix</span>
-        <button class="cmd-chip ai" onclick="aiAction('summarize')">✦ Distil</button>
-        <button class="cmd-chip" onclick="aiAction('add-section')">＋ Weave Section</button>
-        <button class="cmd-chip" onclick="aiAction('improve')">✎ Refine All</button>
-        <button class="cmd-chip" onclick="aiAction('tone')">◐ Shift Tone</button>
+        <div class="global-cmd-wrapper">
+          <div class="global-input-box">
+            <span class="ai-magic-icon">✦</span>
+            <input type="text" id="global-cmd-input" placeholder="Instruct Aelix (e.g. 'Summarize the PDF in 15 lines', 'Extract key takeaways', 'Make tone executive')..." onkeydown="if(event.key==='Enter') runGlobalCustomCmd()"/>
+            <button class="btn-global-weave" id="btn-global-weave" onclick="runGlobalCustomCmd()">✦ Execute</button>
+          </div>
+          <div class="global-chips-row">
+            <span class="chips-label">Quick Actions:</span>
+            <button class="cmd-chip ai" onclick="runGlobalCustomCmd('Summarize the PDF in 15 lines')">✨ 15-Line Summary</button>
+            <button class="cmd-chip" onclick="runGlobalCustomCmd('Extract 5 key takeaways and conclusions')">📌 Key Takeaways</button>
+            <button class="cmd-chip" onclick="runGlobalCustomCmd('Write an executive brief of the entire document')">📝 Executive Brief</button>
+            <button class="cmd-chip" onclick="runGlobalCustomCmd('Rewrite the document in an executive and polished tone')">◐ Shift Tone</button>
+            <button class="cmd-chip" onclick="runGlobalCustomCmd('Add a compelling conclusion section extending the document')">＋ Weave Section</button>
+          </div>
+        </div>
       </div>
 
       <div class="escroll" id="escroll">
 
+        <!-- AI Summary & Intelligence Card -->
+        <div class="ai-summary-card" id="ai-summary-card" style="display:none;">
+          <div class="summary-card-header">
+            <div class="summary-title-group">
+              <span class="summary-pill">✦ Aelix Intelligence</span>
+              <span class="summary-name" id="summary-badge-name">15-Line Summary</span>
+              <span class="summary-provider" id="summary-provider-badge"></span>
+            </div>
+            <div class="summary-btns">
+              <button class="btn-sum-act" onclick="copySummary()" title="Copy to clipboard">📋 Copy</button>
+              <button class="btn-sum-act" onclick="downloadAs('pdf', 'summary_only')" title="Download Summary as PDF">📑 Summary PDF</button>
+              <button class="btn-sum-act active" id="btn-attach-toggle" onclick="toggleAttachSummary()" title="Automatically attached to exact PDF download">📎 Attached to PDF</button>
+              <button class="btn-sum-act" onclick="addSummaryAsSection()" title="Add to outline">➕ Add Section</button>
+              <button class="btn-sum-close" onclick="closeSummaryCard()" title="Hide">✕</button>
+            </div>
+          </div>
+          <div class="summary-card-body" id="summary-card-body"></div>
+        </div>
+
         <!-- empty state -->
         <div class="empty-state" id="empty-hint">
           <div class="ei">✦</div>
-          <div class="et">Select a section from the sidebar to begin editing</div>
+          <div class="et">Select a section from the sidebar or use the AI command bar above</div>
         </div>
 
         <!-- section detail view -->
@@ -649,16 +739,142 @@ body::before,.overlay,.bg-overlay,.background-overlay{
   </div><!-- /workspace -->
 </div><!-- /app -->
 
+<!-- ═══════════════ AI KEY SETTINGS MODAL ═══════════════ -->
+<div class="modal-backdrop" id="key-modal" style="display:none;" onclick="if(event.target===this) closeKeyModal()">
+  <div class="modal-glass">
+    <div class="modal-head">
+      <div class="modal-title">⚙️ Aelix AI Engine Settings</div>
+      <button class="modal-close" onclick="closeKeyModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc">Connect your Groq API key for ultra-fast Llama-3.3 neural PDF processing.</p>
+      <div class="modal-field">
+        <label>Groq API Key (Recommended · 100% Free)</label>
+        <div class="input-with-btn">
+          <input type="password" id="modal-key-input" placeholder="gsk_..." spellcheck="false"/>
+          <button type="button" class="btn-reveal" onclick="toggleKeyVisibility()">👁️</button>
+        </div>
+        <small class="field-hint">
+          Get a free key in 10 seconds (no card required) at
+          <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys ↗</a>
+        </small>
+      </div>
+      <div class="key-status-msg" id="modal-status-msg"></div>
+    </div>
+    <div class="modal-foot">
+      <button type="button" class="btn-modal-test" id="btn-test-key" onclick="testApiKey()">⚡ Test Connection</button>
+      <button type="button" class="btn-modal-save" onclick="saveApiKey()">Save & Apply</button>
+    </div>
+  </div>
+</div>
+
 <div id="spinner"><div class="spin-ring"></div><div class="spin-txt" id="spin-txt">Aelix is reading…</div></div>
 <div class="toast" id="toast"></div>
 
 <script>
-const BACKEND = (window.location.origin && window.location.origin !== 'null' && window.location.origin !== 'file://') ? window.location.origin : 'http://127.0.0.1:5000';
+const BACKEND = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:'))
+  ? window.location.origin
+  : 'http://127.0.0.1:5000';
 
 /* ── STATE ── */
-var sections  = [];
-var activeIdx = null;
-var pdfName   = '';
+var sections           = [];
+var activeIdx          = null;
+var pdfName            = '';
+var originalPdfBase64  = '';
+var originalPdfFile    = null;
+var currentAiSummary   = '';
+var attachSummaryToPdf = true;
+
+/* ── API KEY MANAGEMENT ── */
+function getApiKey(){
+  return localStorage.getItem('aelix_groq_key') || '';
+}
+
+function updateKeyIndicator(){
+  var dot = document.getElementById('key-dot');
+  var key = getApiKey();
+  if(dot){
+    if(key && key.startsWith('gsk_')){
+      dot.className = 'key-status-dot active';
+      dot.title = 'Groq API Key Active';
+    } else {
+      dot.className = 'key-status-dot';
+      dot.title = 'Extractive AI Engine (No custom key)';
+    }
+  }
+}
+updateKeyIndicator();
+
+function openKeyModal(){
+  var input = document.getElementById('modal-key-input');
+  input.value = getApiKey();
+  document.getElementById('modal-status-msg').textContent = '';
+  document.getElementById('modal-status-msg').className = 'key-status-msg';
+  document.getElementById('key-modal').style.display = 'flex';
+  setTimeout(function(){ input.focus(); }, 100);
+}
+
+function closeKeyModal(){
+  document.getElementById('key-modal').style.display = 'none';
+}
+
+function toggleKeyVisibility(){
+  var input = document.getElementById('modal-key-input');
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+function saveApiKey(){
+  var key = document.getElementById('modal-key-input').value.trim();
+  if(key){
+    localStorage.setItem('aelix_groq_key', key);
+    toast('API Key saved & applied ✦');
+  } else {
+    localStorage.removeItem('aelix_groq_key');
+    toast('Using Aelix Extractive Engine');
+  }
+  updateKeyIndicator();
+  closeKeyModal();
+}
+
+async function testApiKey(){
+  var key = document.getElementById('modal-key-input').value.trim();
+  var msg = document.getElementById('modal-status-msg');
+  msg.className = 'key-status-msg';
+  msg.textContent = 'Verifying key with Groq…';
+  
+  if(!key){
+    msg.className = 'key-status-msg err';
+    msg.textContent = 'Please enter a Groq API key (starts with gsk_).';
+    return;
+  }
+  
+  try{
+    var resp = await fetch(BACKEND + '/api/ai', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'x-api-key': key},
+      body: JSON.stringify({
+        instruction: 'Ping',
+        content: 'Test connection',
+        section: 'p',
+        api_key: key
+      })
+    });
+    var data = await resp.json();
+    if(data.ai_provider === 'groq-llama3'){
+      msg.className = 'key-status-msg ok';
+      msg.textContent = '✓ Groq API Key verified! Llama-3.3 neural mode active.';
+    } else if(data.warning && data.warning.includes('invalid')){
+      msg.className = 'key-status-msg err';
+      msg.textContent = '✕ Key was rejected by Groq: Invalid API Key.';
+    } else {
+      msg.className = 'key-status-msg ok';
+      msg.textContent = '✓ Connected successfully!';
+    }
+  }catch(e){
+    msg.className = 'key-status-msg err';
+    msg.textContent = 'Connection test failed: ' + (e.message || 'Server error');
+  }
+}
 
 /* ── LANDING WIRING ── */
 document.getElementById('pick-btn').onclick = function(){
@@ -679,6 +895,16 @@ dz.ondrop = function(e){
 async function handleFile(file){
   if(!file.name.toLowerCase().endsWith('.pdf')){ toast('Aelix only reads PDF files'); return; }
   pdfName = file.name;
+  originalPdfFile = file;
+  
+  // Read base64 so exact PDF download works with 100% fidelity
+  var reader = new FileReader();
+  reader.onload = function(e){
+    var parts = e.target.result.split(',');
+    originalPdfBase64 = parts.length > 1 ? parts[1] : '';
+  };
+  reader.readAsDataURL(file);
+
   document.getElementById('tfile').textContent = file.name;
   document.getElementById('sb-fname').textContent = file.name;
   showSpinner('Aelix is absorbing your document…');
@@ -733,7 +959,7 @@ function renderSidebar(){
 
     var tagEl = document.createElement('span');
     tagEl.className = 'sec-item-tag';
-    tagEl.textContent = (s.level==='h1'?'H1 · Title':s.level==='h2'?'H2 · Section':s.level==='h3'?'H3 · Sub':'Paragraph')+' '+(i+1);
+    tagEl.textContent = (s.level==='h1'?'H1 · Title':s.level==='h2'?'H2 · Section':s.level==='h3'?'H3 · Sub':'Paragraph')+' '+(i+1)+(s.page?' (P.'+s.page+')':'');
 
     var txtEl = document.createElement('span');
     txtEl.className = 'sec-item-text';
@@ -755,32 +981,29 @@ function selectSection(i){
   activeIdx = i;
   var s = sections[i];
 
-  /* sidebar highlight */
   document.querySelectorAll('.sec-item').forEach(function(el){el.classList.remove('active')});
   var si = document.querySelector('.sec-item[data-idx="'+i+'"]');
   if(si){ si.classList.add('active'); si.scrollIntoView({behavior:'smooth',block:'nearest'}); }
 
-  /* show section view */
   document.getElementById('empty-hint').style.display = 'none';
   var sv = document.getElementById('section-view');
   sv.classList.add('visible');
 
-  /* fill in header */
   var levelNames = {h1:'H1 — Title',h2:'H2 — Section',h3:'H3 — Subheading',p:'Paragraph'};
   document.getElementById('sv-tag').textContent = levelNames[s.level||'p'] || 'Block';
-  document.getElementById('sv-pos').textContent = 'Section '+(i+1)+' of '+sections.length;
+  document.getElementById('sv-pos').textContent = 'Section '+(i+1)+' of '+sections.length + (s.page?' · Page '+s.page:'');
 
-  /* fill content */
   var contentEl = document.getElementById('sv-content');
   contentEl.className = 'sv-content '+(s.level||'p');
   contentEl.textContent = s.content || s.title || '';
-  contentEl.oninput = function(){ sections[i].content = contentEl.textContent; };
+  contentEl.oninput = function(){ 
+    sections[i].content = contentEl.textContent;
+    sections[i].edited = true;
+  };
 
-  /* ai badge */
   var card = document.getElementById('sv-card');
   if(s.edited){ card.classList.add('ai-glow'); } else { card.classList.remove('ai-glow'); }
 
-  /* suggestions */
   var suggMap = {
     h1:['Polish this title','Make it more compelling','Shorten to 5 words'],
     h2:['Rewrite as a question','Make more descriptive','Sharpen the heading'],
@@ -803,7 +1026,6 @@ function selectSection(i){
     sc.appendChild(b);
   });
 
-  /* reset cmd row */
   document.getElementById('sv-cmd-input').value = '';
   document.getElementById('sv-thinking').classList.remove('show');
   document.getElementById('sv-cmd-run').disabled = false;
@@ -832,7 +1054,7 @@ function deleteActive(){
   toast('Passage removed');
 }
 
-/* ── RUN COMMAND ── */
+/* ── RUN INLINE SECTION COMMAND ── */
 document.getElementById('sv-cmd-input').onkeydown = function(e){
   if(e.key==='Enter') runCmd();
 };
@@ -850,20 +1072,27 @@ async function runCmd(){
   try{
     var resp = await fetch(BACKEND+'/api/ai',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({instruction:cmd,content:s.content||s.title||'',section:s.level||'p'})
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key': getApiKey()
+      },
+      body:JSON.stringify({
+        instruction:cmd,
+        content:s.content||s.title||'',
+        section:s.level||'p',
+        api_key: getApiKey()
+      })
     });
     var data = await resp.json();
-    if(!resp.ok) throw new Error(data.error||'AI error');
+    if(!resp.ok && !data.result) throw new Error(data.error||'AI error');
 
-    sections[activeIdx].content = data.result;
+    var resultText = data.result || s.content;
+    sections[activeIdx].content = resultText;
     sections[activeIdx].edited  = true;
 
-    /* update card live */
-    document.getElementById('sv-content').textContent = data.result;
+    document.getElementById('sv-content').textContent = resultText;
     document.getElementById('sv-card').classList.add('ai-glow');
 
-    /* refresh sidebar item */
     renderSidebar();
     var si = document.querySelector('.sec-item[data-idx="'+activeIdx+'"]');
     if(si){ si.classList.add('active'); }
@@ -871,6 +1100,10 @@ async function runCmd(){
     document.getElementById('sv-cmd-input').value = '';
     toast('Passage refined by Aelix ✦');
     setStatus(sections.length + ' passages');
+    
+    if(data.warning){
+      setTimeout(function(){ toast(data.warning); }, 2200);
+    }
   }catch(e){
     toast('AI error: '+(e.message||'try again'));
     setStatus('Awaiting your command');
@@ -880,52 +1113,164 @@ async function runCmd(){
   }
 }
 
-/* ── GLOBAL AI ACTIONS ── */
-async function aiAction(type){
-  if(!sections.length){ toast('Upload a document first'); return; }
-  showSpinner('Aelix is composing…');
-  setStatus('Aelix is composing…');
+/* ── GLOBAL AI COMMAND CENTER (e.g. "summarize the pdf in 15 lines") ── */
+async function runGlobalCustomCmd(prefillPrompt){
+  var inputEl = document.getElementById('global-cmd-input');
+  var cmd = prefillPrompt || (inputEl ? inputEl.value.trim() : '');
+  if(!cmd){
+    toast('Please enter a command for Aelix');
+    if(inputEl) inputEl.focus();
+    return;
+  }
+  if(!sections.length){
+    toast('Please upload a PDF document first');
+    return;
+  }
+  if(inputEl) inputEl.value = cmd;
+
+  showSpinner('Aelix is processing: "' + cmd.slice(0, 35) + '…"');
+  setStatus('Aelix is executing: ' + cmd);
+  var btn = document.getElementById('btn-global-weave');
+  if(btn) btn.disabled = true;
+
   try{
-    var resp = await fetch(BACKEND+'/api/ai',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({instruction:type,sections:sections})
+    var resp = await fetch(BACKEND + '/api/ai', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': getApiKey()
+      },
+      body: JSON.stringify({
+        instruction: cmd,
+        sections: sections,
+        api_key: getApiKey()
+      })
     });
     var data = await resp.json();
-    if(!resp.ok) throw new Error(data.error||'AI error');
-    var ns = Object.assign({id:0,edited:true},data.section);
-    sections.unshift(ns);
-    sections.forEach(function(s,i){s.id=i+1});
-    renderSidebar();
-    selectSection(0);
-    document.getElementById('sb-count').textContent = sections.length + ' sections';
-    toast('New passage woven in ✦');
-    setStatus(sections.length + ' passages');
+    if(!resp.ok && !data.result) throw new Error(data.error || 'Server error');
+
+    var resultText = data.summary || data.result || '';
+    currentAiSummary = resultText;
+    attachSummaryToPdf = true;
+
+    // Display in AI Summary Card
+    var card = document.getElementById('ai-summary-card');
+    var body = document.getElementById('summary-card-body');
+    var badgeName = document.getElementById('summary-badge-name');
+    var provBadge = document.getElementById('summary-provider-badge');
+
+    badgeName.textContent = cmd.length > 32 ? cmd.slice(0, 30) + '…' : cmd;
+    provBadge.textContent = data.ai_provider === 'groq-llama3' ? '⚡ Llama-3.3' : '✦ Extractive Engine';
+    body.textContent = resultText;
+    card.style.display = 'block';
+
+    card.scrollIntoView({behavior: 'smooth', block: 'start'});
+
+    toast('Command complete ✦ Attached to PDF download');
+    setStatus(sections.length + ' passages · AI summary ready');
+
+    if(data.warning){
+      setTimeout(function(){ toast(data.warning); }, 3000);
+    }
   }catch(e){
-    toast('AI error: '+(e.message||'try again'));
-    setStatus('Awaiting your command');
+    toast('AI error: ' + (e.message || 'Could not execute command'));
+    setStatus('Ready for command');
   }finally{
     hideSpinner();
+    if(btn) btn.disabled = false;
   }
 }
 
-/* ── DOWNLOAD ── */
+function quickGlobal(promptText){
+  runGlobalCustomCmd(promptText);
+}
+
+function copySummary(){
+  if(!currentAiSummary){ toast('No summary to copy'); return; }
+  navigator.clipboard.writeText(currentAiSummary).then(function(){
+    toast('Summary copied to clipboard ✦');
+  }).catch(function(){
+    toast('Could not copy to clipboard');
+  });
+}
+
+function closeSummaryCard(){
+  document.getElementById('ai-summary-card').style.display = 'none';
+}
+
+function toggleAttachSummary(){
+  attachSummaryToPdf = !attachSummaryToPdf;
+  var btn = document.getElementById('btn-attach-toggle');
+  if(btn){
+    if(attachSummaryToPdf){
+      btn.className = 'btn-sum-act active';
+      btn.textContent = '📎 Attached to PDF';
+      toast('Summary will be prepended to PDF export ✦');
+    } else {
+      btn.className = 'btn-sum-act';
+      btn.textContent = 'Attach to PDF';
+      toast('Summary detached from PDF export');
+    }
+  }
+}
+
+function addSummaryAsSection(){
+  if(!currentAiSummary){ toast('No summary available'); return; }
+  var ns = {
+    id: 0,
+    page: 1,
+    level: 'h2',
+    content: currentAiSummary,
+    original_content: currentAiSummary,
+    edited: true
+  };
+  sections.unshift(ns);
+  sections.forEach(function(s, i){ s.id = i + 1; });
+  renderSidebar();
+  selectSection(0);
+  document.getElementById('sb-count').textContent = sections.length + ' sections';
+  toast('Summary added to Document Outline ✦');
+}
+
+/* Legacy global action support */
+function aiAction(type){
+  var promptMap = {
+    'summarize': 'Summarize the PDF in 15 lines',
+    'add-section': 'Write one new section extending the document',
+    'improve': 'Refine and clarify the central points of the document',
+    'tone': 'Shift the tone of the document to formal executive'
+  };
+  runGlobalCustomCmd(promptMap[type] || type);
+}
+
+/* ── DOWNLOAD & EXPORT ── */
 function showDlMenu(){
   var old = document.getElementById('dl-menu');
   if(old){ old.remove(); return; }
   var btn  = document.getElementById('btn-dl');
   var menu = document.createElement('div');
   menu.id = 'dl-menu';
-  [{'fmt':'pdf','label':'📄  Export as PDF'},
-   {'fmt':'docx','label':'📝  Export as Word (.docx)'},
-   {'fmt':'html','label':'🌐  Export as HTML'},
-   {'fmt':'md','label':'✍️  Export as Markdown'}].forEach(function(f){
+
+  var options = [
+    {'fmt':'pdf', 'mode':'exact', 'label':'📄  Export Exact PDF (Original with AI Edits & Summary)'},
+    {'fmt':'pdf', 'mode':'summary_only', 'label':'📑  Export AI Summary Only (PDF)'},
+    {'fmt':'docx', 'mode':'clean_doc', 'label':'📝  Export as Word (.docx)'},
+    {'fmt':'html', 'mode':'clean_doc', 'label':'🌐  Export as HTML'},
+    {'fmt':'md', 'mode':'clean_doc', 'label':'✍️  Export as Markdown (.md)'},
+    {'fmt':'txt', 'mode':'clean_doc', 'label':'📋  Export as Plain Text (.txt)'}
+  ];
+
+  options.forEach(function(f){
     var b = document.createElement('button');
     b.className = 'dl-opt';
     b.textContent = f.label;
-    b.onclick = function(){ menu.remove(); downloadAs(f.fmt); };
+    b.onclick = function(){ 
+      menu.remove(); 
+      downloadAs(f.fmt, f.mode); 
+    };
     menu.appendChild(b);
   });
+
   var r = btn.getBoundingClientRect();
   menu.style.top   = (r.bottom+8)+'px';
   menu.style.right = (window.innerWidth-r.right)+'px';
@@ -935,54 +1280,95 @@ function showDlMenu(){
   },60);
 }
 
-async function downloadAs(fmt){
-  toast('Exporting as '+fmt.toUpperCase()+'…');
+async function downloadAs(fmt, mode){
+  mode = mode || 'exact';
+  var label = fmt.toUpperCase();
+  if(mode === 'summary_only') label = 'AI SUMMARY (' + fmt.toUpperCase() + ')';
+  else if(mode === 'exact' && fmt === 'pdf') label = 'EXACT PDF (Original + AI Edits)';
+
+  toast('Exporting ' + label + '…');
+  showSpinner('Generating ' + label + '…');
+
   try{
-    var resp = await fetch(BACKEND+'/api/export',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({format:fmt,sections:sections,title:pdfName.replace(/\.pdf$/i,'')})
+    var resp = await fetch(BACKEND + '/api/export', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        format: fmt,
+        export_mode: mode,
+        sections: sections,
+        title: pdfName.replace(/\.pdf$/i, '') || 'Document',
+        pdf_base64: originalPdfBase64,
+        ai_summary: attachSummaryToPdf ? currentAiSummary : ''
+      })
     });
-    if(!resp.ok){ toast('Export failed'); return; }
+
+    if(!resp.ok){
+      var err = await resp.json().catch(function(){ return {}; });
+      throw new Error(err.error || 'Export failed with status ' + resp.status);
+    }
+
     var blob = await resp.blob();
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = pdfName.replace(/\.pdf$/i,'')+'_edited.'+fmt;
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    toast('Exported .'+fmt+' ✦');
+
+    var baseTitle = pdfName.replace(/\.pdf$/i, '') || 'Document';
+    if(mode === 'exact' && fmt === 'pdf'){
+      a.download = baseTitle + '_exact_edited.pdf';
+    } else if(mode === 'summary_only'){
+      a.download = baseTitle + '_summary.' + fmt;
+    } else {
+      a.download = baseTitle + '_edited.' + fmt;
+    }
+
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    toast('Exported ' + a.download + ' ✦');
   }catch(e){
-    toast('Export error');
+    toast('Export error: ' + (e.message || 'Try again'));
+  }finally{
+    hideSpinner();
   }
 }
 
 /* ── RESET ── */
 function resetApp(){
-  sections=[]; activeIdx=null; pdfName='';
+  sections = [];
+  activeIdx = null;
+  pdfName = '';
+  originalPdfBase64 = '';
+  originalPdfFile = null;
+  currentAiSummary = '';
+  attachSummaryToPdf = true;
+
   document.getElementById('app').classList.remove('visible');
   document.getElementById('landing').classList.remove('gone');
   document.getElementById('btn-dl').classList.remove('ready');
-  document.getElementById('file-input').value='';
-  document.getElementById('outline').innerHTML='<div class="empty-state" style="height:200px"><div class="ei">🌸</div><div class="et">Your document structure will appear here</div></div>';
+  document.getElementById('file-input').value = '';
+  document.getElementById('outline').innerHTML = '<div class="empty-state" style="height:200px"><div class="ei">🌸</div><div class="et">Your document structure will appear here</div></div>';
+  document.getElementById('ai-summary-card').style.display = 'none';
   showEmpty();
   setStatus('Awaiting your document');
-  document.getElementById('sb-count').textContent='';
-  document.getElementById('sb-fname').textContent='—';
-  document.getElementById('tfile').textContent='—';
+  document.getElementById('sb-count').textContent = '';
+  document.getElementById('sb-fname').textContent = '—';
+  document.getElementById('tfile').textContent = '—';
 }
 
 /* ── UTILS ── */
-function setStatus(t){ document.getElementById('status').textContent=t; }
-function setBar(v){ document.getElementById('loadfill').style.width=v+'%'; }
-function showSpinner(msg){ document.getElementById('spin-txt').textContent=msg||'Working…'; document.getElementById('spinner').classList.add('show'); }
+function setStatus(t){ document.getElementById('status').textContent = t; }
+function setBar(v){ document.getElementById('loadfill').style.width = v + '%'; }
+function showSpinner(msg){ document.getElementById('spin-txt').textContent = msg || 'Working…'; document.getElementById('spinner').classList.add('show'); }
 function hideSpinner(){ document.getElementById('spinner').classList.remove('show'); }
 var _tt;
 function toast(msg){
-  var el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  clearTimeout(_tt); _tt=setTimeout(function(){el.classList.remove('show')},2800);
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(_tt);
+  _tt = setTimeout(function(){ el.classList.remove('show'); }, 3200);
 }
 </script>
-
 <script>
 /* ── SAKURA CANVAS ── */
 (function(){

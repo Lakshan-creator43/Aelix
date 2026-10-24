@@ -1,90 +1,60 @@
-import os
 from pymongo import MongoClient
-from pymongo.errors import PyMongoError, ConfigurationError
 
 # -------------------------------
 # Connect to MongoDB
 # -------------------------------
-mongo_uri = os.environ.get("MONGODB_URI", "mongodb://localhost:27017")
-try:
-    client = MongoClient(mongo_uri, serverSelectionTimeoutMS=2000)
-    db = client["StudentDB"]
-    collection = db["Students"]
-except (PyMongoError, ConfigurationError) as e:
-    print(f"MongoDB Connection Warning: {e}")
-    client = None
-    db = None
-    collection = None
+client = MongoClient("YOUR_MONGODB_CONNECTION_STRING")
 
+# Create Database
+db = client["StudentDB"]
+
+# Create Collection
+collection = db["Students"]
 
 
 # -------------------------------
 # CREATE
 # -------------------------------
 def create_student():
-    if collection is None:
-        print("MongoDB connection unavailable. Set MONGODB_URI to connect.")
-        return
     student = {
         "name": "John",
         "age": 20,
         "course": "Computer Science"
     }
 
-    try:
-        result = collection.insert_one(student)
-        print("Student Added!")
-        print("ID:", result.inserted_id)
-    except Exception as e:
-        print(f"Error creating student: {e}")
+    result = collection.insert_one(student)
+    print("Student Added!")
+    print("ID:", result.inserted_id)
 
 
 # -------------------------------
 # READ
 # -------------------------------
 def read_students():
-    if collection is None:
-        print("MongoDB connection unavailable. Set MONGODB_URI to connect.")
-        return
     print("\nStudent List:\n")
 
-    try:
-        for student in collection.find():
-            print(student)
-    except Exception as e:
-        print(f"Error reading students: {e}")
+    for student in collection.find():
+        print(student)
 
 
 # -------------------------------
 # UPDATE
 # -------------------------------
 def update_student():
-    if collection is None:
-        print("MongoDB connection unavailable. Set MONGODB_URI to connect.")
-        return
-    try:
-        collection.update_one(
-            {"name": "John"},
-            {"$set": {"age": 21}}
-        )
-        print("Student Updated!")
-    except Exception as e:
-        print(f"Error updating student: {e}")
+    collection.update_one(
+        {"name": "John"},
+        {"$set": {"age": 21}}
+    )
+
+    print("Student Updated!")
 
 
 # -------------------------------
 # DELETE
 # -------------------------------
 def delete_student():
-    if collection is None:
-        print("MongoDB connection unavailable. Set MONGODB_URI to connect.")
-        return
-    try:
-        collection.delete_one({"name": "John"})
-        print("Student Deleted!")
-    except Exception as e:
-        print(f"Error deleting student: {e}")
-
+    collection.delete_one({"name": "John"})
+    print("Student Deleted!")
 
 
 # -------------------------------

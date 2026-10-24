@@ -1,1 +1,8 @@
 .env
+.env.*
+__pycache__/
+*.py[cod]
+.vercel/
+.idea/
+.vscode/
+New folder/
